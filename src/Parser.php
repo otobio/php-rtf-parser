@@ -43,20 +43,20 @@ class Parser
     private function parseOptimize()
     {
         $nodes = [];
-        $hex = '';
+        $text = '';
         foreach ($this->doParse() as $node) {
             if ($node->name() === 'char') {
-                $hex .= dechex($node->charCode());
+                $text .= $node->text();
                 continue;
             }
-            if (!empty($hex)) {
-                $nodes[] = new Node\TextNode(hex2bin($hex));
-                $hex = '';
+            if (!empty($text)) {
+                $nodes[] = new Node\TextNode($text);
+                $text = '';
             }
             $nodes[] = $node;
         }
-        if (!empty($hex)) {
-            $nodes[] = new Node\TextNode(hex2bin($hex));
+        if (!empty($text)) {
+            $nodes[] = new Node\TextNode($text);
         }
 
         return $nodes;
