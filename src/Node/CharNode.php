@@ -1,6 +1,6 @@
 <?php
 
-namespace RtfParser\Node;
+namespace Tyru\RtfParser\Node;
 
 // Other nodes except BlockNode, CtrlWordNode
 class CharNode implements Node

@@ -1,6 +1,6 @@
 <?php
 
-namespace RtfParser\Node;
+namespace Tyru\RtfParser\Node;
 
 // An array that stores the control words, which hides inner TextNode
 // For example, there may be a description of font or color palette etc.

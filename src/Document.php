@@ -1,6 +1,6 @@
 <?php
 
-namespace RtfParser;
+namespace Tyru\RtfParser;
 
 class Document
 {

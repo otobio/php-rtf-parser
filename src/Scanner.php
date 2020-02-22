@@ -1,6 +1,6 @@
 <?php
 
-namespace RtfParser;
+namespace Tyru\RtfParser;
 
 class Scanner
 {
@@ -11,7 +11,7 @@ class Scanner
     public function __construct(string $source)
     {
         if (empty($source)) {
-            throw new InvalidArgumentException('$source');
+            throw new \InvalidArgumentException('$source');
         }
         $this->source = $source;
         $this->length = strlen($source);
@@ -41,7 +41,7 @@ class Scanner
     public function back()
     {
         if ($this->pos === 0) {
-            throw new Exception('pos is already 0');
+            throw new \Exception('pos is already 0');
         }
         $this->pos--;
     }

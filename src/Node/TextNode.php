@@ -1,6 +1,6 @@
 <?php
 
-namespace RtfParser\Node;
+namespace Tyru\RtfParser\Node;
 
 // Consecutive nodes of CharNode is converted to one TextNode
 class TextNode implements Node

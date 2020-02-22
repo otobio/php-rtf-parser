@@ -1,9 +1,9 @@
 <?php
 
-namespace RtfParser\Node;
+namespace Tyru\RtfParser\Node;
 
 define('CTRL_WORD_TABLE', [
-  '\\par' => 'RtfParser\Node\ParNode',
+  '\\par' => ParNode::class,
 ]);
 
 // Control word node

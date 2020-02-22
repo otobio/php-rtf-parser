@@ -1,6 +1,6 @@
 <?php
 
-namespace RtfParser\Node;
+namespace Tyru\RtfParser\Node;
 
 // Control word node: \par
 class ParNode extends CtrlWordNode

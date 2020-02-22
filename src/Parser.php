@@ -1,6 +1,6 @@
 <?php
 
-namespace RtfParser;
+namespace Tyru\RtfParser;
 
 function isAlpha($c)
 {
@@ -110,7 +110,7 @@ class Parser
     {
         $c = $this->scanner->next();
         if (is_null($c)) {
-            throw new Exception('parse error: unexpected end after backslash at ' . $this->scanner->pos());
+            throw new \Exception('parse error: unexpected end after backslash at ' . $this->scanner->pos());
         }
 
         switch ($c) {
@@ -133,11 +133,11 @@ class Parser
             // Read next two characters that are the hexadecimal notation of a character
             $h1 = $this->scanner->next();
             if (is_null($h1)) {
-                throw new Exception("parse error: unexpected end after \\' at " . $this->scanner->pos());
+                throw new \Exception("parse error: unexpected end after \\' at " . $this->scanner->pos());
             }
             $h2 = $this->scanner->next();
             if (is_null($h2)) {
-                throw new Exception("parse error: unexpected end after \\'x at " . $this->scanner->pos());
+                throw new \Exception("parse error: unexpected end after \\'x at " . $this->scanner->pos());
             }
 
             return Node\CharNode::fromCharCode(hexdec($h1 . $h2));
@@ -163,7 +163,7 @@ class Parser
                 $minus = true;
                 $c = $this->scanner->next();
                 if (is_null($c)) {
-                    throw new Exception('parse error: unexpected end after minus in parameter at ' . $this->scanner->pos());
+                    throw new \Exception('parse error: unexpected end after minus in parameter at ' . $this->scanner->pos());
                 }
             } elseif (!isDigit($c)) {
                 $this->scanner->back();
