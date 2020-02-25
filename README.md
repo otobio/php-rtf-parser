@@ -30,11 +30,12 @@ value.
 
 These arguments are passed to `mb_convert_encoding()` function if both encodings are not same.
 
+
 # RtfParser
 
 ```php
-$scanner = new RtfParser\Scanner($text);
-$parser = new RtfParser\Parser($scanner);
+$scanner = new \Tyru\RtfParser\Scanner($text);
+$parser = new \Tyru\RtfParser\Parser($scanner);
 $text = '';
 $doc = $parser->parse();
 foreach ($doc->childNodes() as $node) {
@@ -43,7 +44,7 @@ foreach ($doc->childNodes() as $node) {
 echo $text;
 ```
 
-`$parser->parse()` returns `RtfParser\Document` instance.  `$doc->childNodes()`
-returns array of `RtfParser\Node\Node`.  Currently [`RtfParser\Node\Node`
-interface](https://github.com/tyru/php-rtf-parser/blob/master/src/Node/Node.php)
+`$parser->parse()` returns `\Tyru\RtfParser\Document` instance.  `$doc->childNodes()`
+returns array of `\Tyru\RtfParser\Node\Node`.  Currently [`\Tyru\RtfParser\Node\Node`
+interface](https://github.com/otobio/php-rtf-parser/blob/master/src/Node/Node.php)
 only supports `text()` and `name()` method.

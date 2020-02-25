@@ -15,8 +15,8 @@ function extractText(string $filename, array $config) {
   if (empty($text))
     return '';
 
-  $scanner = new RtfParser\Scanner($text);
-  $parser = new RtfParser\Parser($scanner);
+  $scanner = new \Tyru\RtfParser\Scanner($text);
+  $parser = new \Tyru\RtfParser\Parser($scanner);
   $text = '';
   $doc = $parser->parse();
   foreach ($doc->childNodes() as $node) {
